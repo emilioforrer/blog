@@ -1,13 +1,13 @@
 # Kubernetes Inter-pod anti-affinity and de-schedule
 
 
-## Intoduction
+## Introduction
 
-Before talking about affinity and anti-affinity inside a Kubernetes cluster, let's first understand what  Kubernetes is. Kubernetes is a platform to manage and orchestrate workloads and services based on containers that offer a lot of features such as autoscaling (vertical and horizontal), container replicas, secret management, etc.
+Before talking about affinity and anti-affinity inside a Kubernetes cluster, let's first understand what  Kubernetes is. Kubernetes is a platform to manage and orchestrate workloads and services based on containers that offer a lot of features such as auto-scaling (vertical and horizontal), container replicas, secret management, etc.
 
 Kubernetes also offers 2 important scheduling features that can be configured, to place pods inside the nodes. Those features are:
 
-* **Node Affinty**: This is similar to `nodeSelector` with the difference that the language is more expressive and you can create rules that are not **hard requirements** but rather a **soft/preferred** rule, meaning that the scheduler will still be able to schedule your pod, even if the rules can not be met.
+* **Node affinity**: This is similar to `nodeSelector` with the difference that the language is more expressive and you can create rules that are not **hard requirements** but rather a **soft/preferred** rule, meaning that the scheduler will still be able to schedule your pod, even if the rules can not be met.
 * **Inter-pod affinity and anti-affinity**: Allow you to define rules that constrain which nodes your pod is eligible to be scheduled based on labels on pods that are already running on the node rather than based on labels on nodes. 
 
 The focus of this post will be on **Inter-pod anti-affinity**:
