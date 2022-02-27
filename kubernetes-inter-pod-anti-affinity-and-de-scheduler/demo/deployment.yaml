@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: demo-app
+  name: demo-app
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels: # These are the the Pod labels
+        app: demo-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions: # The key and value of the label that you will match against
+                - key: app
+                  operator: In
+                  values:
+                  - demo-app # In this example we are matching against the same lables as the pod label
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - image: nginxdemos/hello
+        imagePullPolicy: Always
+        name: hello
+        resources: {}
+
