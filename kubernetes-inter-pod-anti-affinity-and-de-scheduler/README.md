@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Before talking about affinity and anti-affinity inside a Kubernetes cluster, let's first understand what  Kubernetes is. Kubernetes is a platform to manage and orchestrate workloads and services based on containers that offer a lot of features such as auto-scaling (vertical and horizontal), container replicas, secret management, etc.
+Before talking about affinity and anti-affinity inside a Kubernetes cluster, let's first understand what  Kubernetes is. Kubernetes is a platform to manage and orchestrate workloads and services based on containers that offer a lot of features such as auto-scaling (vertical and horizontal), container replicas, secrets management, etc.
 
 Kubernetes also offers 2 important scheduling features that can be configured, to place pods inside the nodes. Those features are:
 
@@ -176,7 +176,7 @@ demo-app-99d479bc9-xhfj8   1/1     Running   0          30m    10.244.3.6    k8s
 
 What happens if a node goes back online?
 
-Let's see, run the following commands to the nodes 
+Let's see, run the following commands to restore the nodes 
 
 ```bash
 kubectl uncordon k8s-playground-worker2
@@ -250,7 +250,7 @@ demo-app-99d479bc9-xgjgz   1/1     Running   0          45s   10.244.2.11   k8s-
 demo-app-99d479bc9-xhfj8   1/1     Running   0          96m   10.244.3.6    k8s-playground-worker    <none>           <none>
 ```
 
-As you can see, the anti-affinity rules got reapplied, and the pods are re-scheduled on different nodes again. High availability for your application has restored!.
+As you can see, the anti-affinity rules got reapplied, and the pods are re-scheduled on different nodes again. High availability for your application has been restored!.
 
 **Note**: [Descheduler](https://github.com/kubernetes-sigs/descheduler) has a lot more options, but that's a story for another post.
 
