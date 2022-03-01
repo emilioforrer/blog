@@ -89,7 +89,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - demo-app # In this example we are matching against the same lables as the pod label
+                  - demo-app # In this example we are matching against the same labels as the pod label
               topologyKey: kubernetes.io/hostname
       containers:
       - image: nginxdemos/hello
