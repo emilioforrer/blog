@@ -115,7 +115,7 @@ demo-app-99d479bc9-xwsfk   1/1     Running   0          4s    10.244.2.8   k8s-p
 
 As you can see, Kubernetes will prefer to place the pods on nodes that do not have an instance of the app running.
 
-What happens if we have more replicas than the number of nodes? well, let's see. Run the following command to scale the deployment to 5 replicas:
+What happens if we have more replicas than the number of nodes? Well, let's see. Run the following command to scale the deployment to 5 replicas:
 
 ```bash
 kubectl scale deployment demo-app --replicas 5
@@ -174,7 +174,7 @@ demo-app-99d479bc9-xhfj8   1/1     Running   0          30m    10.244.3.6    k8s
 
 ## Restoring down nodes
 
-What happens if a node goes back online?
+So, what happens if a node goes back online?
 
 Let's see, run the following commands to restore the nodes 
 
